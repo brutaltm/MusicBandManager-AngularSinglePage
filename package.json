@@ -1,0 +1,28 @@
+{
+  "name": "angularsinglepage",
+  "version": "1.0.0",
+  "engines": {
+    "node": "14.x"
+  },
+  "description": "Single Page Web App with AngularJS, NodeJS, MongoDB",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brutaltm/MusicBandManager-AngularSinglePage.git"
+  },
+  "author": "brutaltm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brutaltm/MusicBandManager-AngularSinglePage/issues"
+  },
+  "homepage": "https://github.com/brutaltm/MusicBandManager-AngularSinglePage#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "mongodb": "3.6.5"
+  }
+}

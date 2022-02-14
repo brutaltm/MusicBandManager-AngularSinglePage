@@ -1,0 +1,69 @@
+<div >
+	<form ng-submit="formSubmit()" class="form-signin">
+	<div class="card-body mx-auto" style="max-width: 400px;">
+		<h5 class="card-title mt-3 text-center">{{title}}</h4>
+		<div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-user-plus"></i> </span>
+             </div>
+            <input name="" class="form-control" ng-model="koncert.nazwa" placeholder="Nazwa" type="text" required />
+        </div>
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-calendar"></i> </span>
+             </div>
+            <input name="" class="form-control" ng-model="koncert.termin" type="datetime-local" value="2018-06-12T19:30" step='300' required />
+        </div>
+		<div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-clock"></i> </span>
+            </div>
+            <input class="form-control" ng-model="koncert.dlugosc" placeholder="Długość(h)" type="number" step=0.5 required />
+        </div> 
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-money-bill-alt"></i> </span>
+            </div>
+            <input class="form-control" ng-model="koncert.cena" placeholder="5000 PLN" type="number" step=0.01 required />
+        </div> 
+        <p>Status:</p>
+        <div ng-Repeat="(k,v) in status">
+            <div class="form-check">
+                <input ng-model="koncert.status" class="form-check-input" type="radio" name="status" value='{{ v }}' ng-checked="v==koncert.status">
+                <label class="form-check-label">
+                    {{ k }}
+                </label>
+            </div>
+        </div>
+        <label for="kon">Kontrahent: </label>
+        <select id="kon" ng-model="koncert.kontrahentID">
+            <option ng-Repeat="k in kontrahenci" value='{{k._id}}'>{{k.nazwa}}</option>
+        </select>
+        <p class="divider-text">
+            <span class="bg-light">Adres</span>
+        </p>
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-address-card"></i> </span>
+            </div>
+            <input class="form-control" ng-model="koncert.adres" placeholder="ul. Warszawska 100" type="text" required />
+        </div> 
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-code"></i> </span>
+            </div>
+            <input class="form-control" ng-model="koncert.kod" placeholder="05-300" type="text" required maxlength="6"/>
+        </div> 
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+            </div>
+            <input class="form-control" ng-model="koncert.miejscowosc" placeholder="Warszawa" type="text" required/>
+        </div> 
+		<div class="form-group">
+			<button type="submit" class="btn btn-success">Dodaj</button>
+			<span class="text-danger" style="color:red"> {{ error }} </span> 
+		</div>
+	</div>
+	</form>	
+</div>

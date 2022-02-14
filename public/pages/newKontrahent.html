@@ -1,0 +1,38 @@
+<div >
+	<form ng-submit="formSubmit()" class="form-signin">
+	<div class="card-body mx-auto" style="max-width: 400px;">
+		<h5 class="card-title mt-3 text-center">{{title}}</h4>
+		<div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-user-plus"></i> </span>
+             </div>
+            <input name="" class="form-control" ng-model="kontrahent.nazwa" placeholder="Nazwa" type="text" required />
+        </div>
+        <p class="divider-text">
+            <span class="bg-light">Adres</span>
+        </p>
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-address-card"></i> </span>
+            </div>
+            <input class="form-control" ng-model="kontrahent.adres" placeholder="ul. Warszawska 100" type="text" required />
+        </div> 
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-code"></i> </span>
+            </div>
+            <input class="form-control" ng-model="kontrahent.kod" placeholder="05-300" type="text" required maxlength="6"/>
+        </div> 
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+            </div>
+            <input class="form-control" ng-model="kontrahent.miejscowosc" placeholder="Warszawa" type="text" required/>
+        </div> 
+		<div class="form-group">
+			<button type="submit" class="btn btn-success">Dodaj</button>
+			<span class="text-danger" style="color:red"> {{ error }} </span> 
+		</div>
+	</div>
+	</form>	
+</div>

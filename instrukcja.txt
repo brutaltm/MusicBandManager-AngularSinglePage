@@ -1,0 +1,14 @@
+Projekt nr 14 - Aplikacja manager zespołu muzycznego.
+Struktura projektu to:
+- Front End: AngularJS, JQuery, BootStrap, FontAwesome
+- Back End: NodeJS z modułami (m.in. Express, Express-session, MongoDB)
+- Baza Danych: MongoDB
+
+Instrukcja:
+1. Włączyć serwer MongoDB - plik mongod w 'lokalizacja MongoDB/bin'
+2. Otworzyć konsolę w lokalizacji projektu
+3. Uruchomić databaseDrop.js za pomocą polecenia 'node databaseDrop.js' (jeśli istnieje już baza o nazwie tpsiBR)
+4. Uruchomić databaseCreate.js za pomocą polecenia 'node databaseCreate.js'
+5. Uruchomić server.js za pomocą polecenia 'node server.js'
+6. Otworzyć w przeglądarce adres 'localhost:8080'
+7. Do testowania można użyć przykładowego konta (np. login: 'test', hasło: 'Haslo') lub stworzyć nowe poprzez rejestrację.

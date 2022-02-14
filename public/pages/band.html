@@ -1,0 +1,69 @@
+<div class="card-body">
+  <div class="row" style="margin-right: 10px;">
+    <div class="col-sm">
+      <table class="table w-75">
+          <thead>
+            <tr>
+              <th class="text-center" colspan='2'>
+                Informacje o zespole
+                <i style="cursor: pointer" class="fa fa-edit" onclick="edycja()"></i>
+                <button name="edycja.submit" type="submit" class="ml-1 btn btn-success float-right" ng-click="editBand()">Zatwierdź zmiany</button>
+              </th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Nazwa: </th>
+              <td>
+                <span class="span">{{zespol.nazwa}}</span>
+                <input name="edycja.nazwa" class="form-control" ng-model="edycja.nazwa">
+              </td>
+            </tr>
+            <tr>
+              <th>Gatunek</th>
+              <td>
+                <span class="span">{{zespol.gatunek}}</span>
+                <input name="edycja.gatunek" class="form-control" ng-model="edycja.gatunek">
+              </td>
+            </tr>
+            <tr>
+              <th>Login</th>
+              <td>
+                <span class="span">{{zespol.login}}</span>
+                <input name="edycja.login" class="form-control" ng-model="edycja.login" disabled>
+              </td>
+            </tr>
+            <tr>
+              <th>Email</th>
+              <td>
+                <span class="span">{{zespol.email}}</span>
+                <input name="edycja.email" class="form-control" ng-model="edycja.email">
+              </td>
+            </tr>
+            <tr>
+              <th>Telefon</th>
+              <td>
+                <span class="span">{{zespol.telefon}}</span>
+                <input name="edycja.telefon" class="form-control" ng-model="edycja.telefon">
+              </td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+    <div class="col-sm-4">
+      <h5>Członkowie:</h5>
+      <ol class="list-group" type="1" ng-Repeat="x in muzycy">
+          <li class="list-group-item">
+              {{ x.imie }} {{ x.nazwisko }} - {{ x.rola }} <i style="cursor: pointer" class="fa fa-trash" ng-click="removeMusician($index)"></i>
+          </li>
+      </ol>
+      <div class="row">
+        <input name="" class="col-sm ml-1 form-control" ng-model="imie" placeholder="Imię" type="text" required />
+        <input name="" class="col-sm ml-1 form-control" ng-model="nazwisko" placeholder="Nazwisko" type="text" required />
+        <input name="" class="col-sm ml-1 form-control" ng-model="rola" placeholder="Rola" type="text" required />
+        <button type="submit" class=" ml-1 btn btn-success" ng-click="addMusician()">Dodaj</button>
+      </div>
+    </div>
+  </div>
+</div>

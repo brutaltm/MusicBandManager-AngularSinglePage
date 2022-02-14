@@ -1,0 +1,62 @@
+<div class="card-body">
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th style="cursor: pointer" scope="col" ng-click="sort('termin')">Termin 
+            <i class="fa" ng-class="{'fa-sort': sortowanoPo.par != 'termin',
+            'fa-sort-up': sortowanoPo.par == 'termin' && sortowanoPo.rosn,
+            'fa-sort-down': sortowanoPo.par == 'termin' && !sortowanoPo.rosn}"></i>
+        </th>
+        <th style="cursor: pointer" scope="col" ng-click="sort('nazwa')">Nazwa 
+            <i class="fa" ng-class="{'fa-sort': sortowanoPo.par != 'nazwa',
+            'fa-sort-up': sortowanoPo.par == 'nazwa' && sortowanoPo.rosn,
+            'fa-sort-down': sortowanoPo.par == 'nazwa' && !sortowanoPo.rosn}"></i></th>
+        <th style="cursor: pointer" scope="col" ng-click="sort('dlugosc')">Długość 
+            <i class="fa" ng-class="{'fa-sort': sortowanoPo.par != 'dlugosc',
+            'fa-sort-up': sortowanoPo.par == 'dlugosc' && sortowanoPo.rosn,
+            'fa-sort-down': sortowanoPo.par == 'dlugosc' && !sortowanoPo.rosn}"></i></th>
+        <th style="cursor: pointer" scope="col" ng-click="sort('cena')">Cena 
+            <i class="fa" ng-class="{'fa-sort': sortowanoPo.par != 'cena',
+            'fa-sort-up': sortowanoPo.par == 'cena' && sortowanoPo.rosn,
+            'fa-sort-down': sortowanoPo.par == 'cena' && !sortowanoPo.rosn}"></i></th>
+        <th style="cursor: pointer" scope="col" ng-click="sort('status')">Status 
+            <i class="fa" ng-class="{'fa-sort': sortowanoPo.par != 'status',
+            'fa-sort-up': sortowanoPo.par == 'status' && sortowanoPo.rosn,
+            'fa-sort-down': sortowanoPo.par == 'status' && !sortowanoPo.rosn}"></i></th>
+        <th style="cursor: pointer" scope="col" ng-click="sort('adres')">Adres 
+            <i class="fa" ng-class="{'fa-sort': sortowanoPo.par != 'adres',
+            'fa-sort-up': sortowanoPo.par == 'adres' && sortowanoPo.rosn,
+            'fa-sort-down': sortowanoPo.par == 'adres' && !sortowanoPo.rosn}"></i></th>
+        <th style="cursor: pointer" scope="col" ng-click="sort('kod')">Kod 
+            <i class="fa" ng-class="{'fa-sort': sortowanoPo.par != 'kod',
+            'fa-sort-up': sortowanoPo.par == 'kod' && sortowanoPo.rosn,
+            'fa-sort-down': sortowanoPo.par == 'kod' && !sortowanoPo.rosn}"></i></th>
+        <th style="cursor: pointer" scope="col" ng-click="sort('miejscowosc')">Miasto 
+            <i class="fa" ng-class="{'fa-sort': sortowanoPo.par != 'miejscowosc',
+            'fa-sort-up': sortowanoPo.par == 'miejscowosc' && sortowanoPo.rosn,
+            'fa-sort-down': sortowanoPo.par == 'miejscowosc' && !sortowanoPo.rosn}"></i></th>
+        <th scoper="col">Opcje</th>
+    </tr>
+    </thead>
+    <tbody>
+        <div>
+            <tr ng-Repeat="x in koncerty">
+                <td>{{ x.termin | date:'d MMMM y, H:mm' }}</td>
+                <td>{{ x.nazwa }}</td>
+                <td>{{ Math.floor(x.dlugosc) }}h {{ (x.dlugosc - Math.floor(x.dlugosc)) * 60 }} min</td>
+                <td>{{ x.cena }} PLN</td>
+                <td>{{ keys[x.status-1] }}</td>
+                <td>{{ x.adres }}</td>
+                <td>{{ x.kod }}</td>
+                <td>{{ x.miejscowosc }}</td>
+                <td>
+                    <a class="fa fa-edit" href="#!newConcert?concert={{x._id}}"></a>
+                    <i ng-if="keys[x.status-1] == 'Zagrany' || keys[x.status-1] == 'Odwolany'" style="cursor: pointer" class="fa fa-trash" ng-click="removeConcert($index)"></i>
+                </td>
+            </tr>
+        </div>
+    </tbody>
+</table>
+<a class="btn btn-primary" href="#!newConcert">Dodaj nowy</a>
+<span style="margin-left: 20%;" ng-if="sortowanoPo.par">Sortowanie po kolumnie: '{{sortowanoPo.par}}' - {{sortowanoPo.rosn ? 'rosnąco' : 'malejąco'}}.</span>
+</div>

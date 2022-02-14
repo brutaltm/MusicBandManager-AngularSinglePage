@@ -1,0 +1,87 @@
+<div class="card bg-light">
+    <style>
+.divider-text {
+    position: relative;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.divider-text span {
+    padding: 7px;
+    font-size: 12px;
+    position: relative;   
+    z-index: 2;
+}
+.divider-text:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    top: 55%;
+    left: 0;
+    z-index: 1;
+}
+
+    </style>
+    <div ng-app="myApp" ng-controller="RegisterController" class="card-body mx-auto" style="max-width: 400px;">
+        <h4 class="card-title mt-3 text-center">Rejestracja</h4>
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-user-secret"></i> </span>
+             </div>
+            <input ng-model="login" class="form-control" placeholder="Login" type="text" minlength=4 >
+        </div>
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+            </div>
+            <input id="password" ng-model="password" class="form-control" placeholder="Hasło" type="password" minlength=5 >
+        </div> <!-- form-group// -->
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+            </div>
+            <input ng-model="repeatpassword" class="form-control" placeholder="Powtórz Hasło" type="password" minlength=5 >
+        </div>
+        <p class="divider-text">
+            <span class="bg-light">Szczegóły</span>
+        </p>
+        <form>
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+             </div>
+            <input ng-model="nazwa" class="form-control" placeholder="Nazwa zespołu" type="text">
+        </div> <!-- form-group// -->
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+             </div>
+            <input ng-model="email" class="form-control" placeholder="Email" type="email">
+        </div> <!-- form-group// -->
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-music"></i> </span>
+             </div>
+            <input ng-model="gatunek" class="form-control" placeholder="Gatunek muzyki" type="text">
+        </div>
+        
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+            </div>
+            <select class="custom-select" style="max-width: 120px;">
+                <option selected="">+48</option>
+            <input ng-model="telefon" class="form-control" placeholder="Telefon" type="text">
+        </div> <!-- form-group// -->
+         <!-- form-group// -->                                      
+        <div class="form-group">
+            <button ng-click="sendForm()" class="btn btn-primary btn-block"> Utwórz konto  </button>
+            <span class="text-danger" style="color:red"> {{ error }} </span> 
+        </div> <!-- form-group// -->      
+        <p class="text-center">Masz już konto? <a href="#!login">Zaloguj się</a> </p>                                                                 
+    </form>
+    </article>
+    </div> <!-- card.// -->
+    
+    </div> 

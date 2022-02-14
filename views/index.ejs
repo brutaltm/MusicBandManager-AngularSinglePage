@@ -1,0 +1,92 @@
+<html lang="pl-PL" ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>Aplikacja Manager Zespołu Muzycznego</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="angular-ui-router.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="app.js"></script>
+	<script src="controllers/loginController.js"></script>
+	<script src="controllers/homeController.js"></script>
+	<script src="controllers/registerController.js"></script>
+	<script src="controllers/bandController.js"></script>
+	<script src="controllers/concertsController.js"></script>
+	<script src="controllers/newConcertController.js"></script>
+	<script src="controllers/kontrahenciController.js"></script>
+	<script src="controllers/newKontrahentController.js"></script>
+	<script src="services/loginService.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+</head>
+<body>
+	<div ng-app="myApp" width="100px">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand">Manager Zespołu</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+			</button>
+		  
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			  <ul class="navbar-nav mr-auto">
+				<li class="nav-item" ui-sref-active="active">
+				  <a class="nav-link" ui-sref="home">Strona Główna</span></a>
+				</li>
+
+				<li class="nav-item dropdown" ui-sref-active="active">
+					<a style="cursor: pointer" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Twój Zespół
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					  <a class="dropdown-item" ui-sref="band">Informacje</a>
+					  <div class="dropdown-divider"></div>
+					  <span class="dropdown-item" style="color: black; background-color: initial !important;">{{nazwa}}</a>
+					</div>
+				  </li>
+				<li class="nav-item dropdown" ui-sref-active="active">
+				  <a style="cursor: pointer" class="nav-link dropdown-toggle" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Koncerty
+				  </a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+					<a class="dropdown-item" ui-sref="concerts">Wyświetl</button>
+					<a class="dropdown-item" ui-sref="newConcert">Dodaj nowy</a>
+					<div class="dropdown-divider"></div>
+				  </div>
+				</li>
+				<li class="nav-item dropdown" ui-sref-active="active">
+					<a style="cursor: pointer" class="nav-link dropdown-toggle" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					  Kontrahenci
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+					  <a class="dropdown-item" ui-sref="kontrahenci">Wyświetl</button>
+					  <a class="dropdown-item" ui-sref="newKontrahent">Dodaj</a>
+					</div>
+				  </li>
+			  </ul>
+			  <ul class="navbar-nav my-2 my-lg-0">
+				
+				<li ng-if="!isAuthenticated" class="nav-item" ui-sref-active="active">
+					<a class="nav-link" ui-sref="register">Rejestracja</a>
+				</li>
+				<li ng-if="!isAuthenticated" class="nav-item" ui-sref-active="active">
+					<a class="nav-link" ui-sref="login">Logowanie</a>
+				</li>
+				
+				<div ng-if="isAuthenticated">
+				<li class="nav-item">
+					Witaj
+					<span class="mr-2 font-weight-bold" style="color: green; background-color: initial !important;"> {{login}}!</span>
+					<a type="submit" href="/logout" class="btn btn-warning">Wyloguj</a>
+				</li>
+				</div>
+				
+			  </ul>
+			</div>
+		  </nav>
+		<div ui-view></div>
+	</div>
+</body>
+</html>
+    
