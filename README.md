@@ -2,7 +2,7 @@
 Single Page Web App with AngularJS, NodeJS, MongoDB
 
  ### Demo on Heroku using MongoDB Atlas:
- https://fpsgamedemo.herokuapp.com/ (site might take couple seconds to launch)
+ https://angularbandmanager.herokuapp.com/ (site might take couple seconds to launch)
  
  Example account for testing:\
  Login: test\
