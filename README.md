@@ -1,8 +1,8 @@
 # MusicBandManager-AngularSinglePage
 Single Page Web App with AngularJS, NodeJS, MongoDB
 
- ### Demo on Heroku using MongoDB Atlas:
- https://angularbandmanager.herokuapp.com/ (site might take couple seconds to launch)
+ ### App deployed on VM using MongoDB Atlas:
+ http://138.2.171.185/musicBand/
  
  Example account for testing:\
  Login: test\

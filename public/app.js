@@ -35,7 +35,7 @@
         })
         .state('band',{
             url: '/band',
-            templateUrl: '/pages/band.html',
+            templateUrl: 'pages/band.html',
             controller: 'BandController',
             resolve: { authenticate: authenticate }
         })
